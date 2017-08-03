@@ -113,7 +113,9 @@ public class Main_Menu extends javax.swing.JFrame {
             mon.setVisible(true);
             dispose();
         } else if (jrbLibros.isSelected() == true) {
-            
+            Libros mon = new Libros();
+            mon.setVisible(true);
+            dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Ingrese una opcion valida");
         }

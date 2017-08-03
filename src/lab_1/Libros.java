@@ -5,6 +5,10 @@
  */
 package lab_1;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import javax.swing.ButtonGroup;
+
 /**
  *
  * @author estudiante
@@ -14,10 +18,19 @@ public class Libros extends javax.swing.JFrame {
     /**
      * Creates new form Libros
      */
+    ArrayList<String> list = new ArrayList<>();
+    int cantidad = 0;
+    int alquilados = 0;
+    int comprados = 0;
     public Libros() {
         initComponents();
+        buttongroup();
     }
-
+    private void buttongroup(){
+        ButtonGroup po =new ButtonGroup();
+        po.add(jRadioButton1);
+        po.add(jRadioButton2);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,21 +40,233 @@ public class Libros extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        btnregresar = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        lblcomprar = new javax.swing.JLabel();
+        txtcomprar = new javax.swing.JTextField();
+        lblalquilar = new javax.swing.JLabel();
+        txtalquilados = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtcantidad = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtnombrelibro = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtNombrelibros = new javax.swing.JTextArea();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        btnagregar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 36, Short.MAX_VALUE)
+        );
+
+        btnregresar.setText("Regresar");
+        btnregresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnregresarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(btnregresar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnregresar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        lblcomprar.setText("Compras:");
+
+        txtcomprar.setEditable(false);
+        txtcomprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcomprarActionPerformed(evt);
+            }
+        });
+
+        lblalquilar.setText("Alquilados:");
+
+        txtalquilados.setEditable(false);
+        txtalquilados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtalquiladosActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Cantidad:");
+
+        txtcantidad.setEditable(false);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblcomprar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(txtcomprar)
+            .addComponent(lblalquilar, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(txtalquilados)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(txtcantidad)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addComponent(lblcomprar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtcomprar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblalquilar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtalquilados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
+        );
+
+        jLabel1.setText("Nombre del libro:");
+
+        txtNombrelibros.setEditable(false);
+        txtNombrelibros.setColumns(20);
+        txtNombrelibros.setRows(5);
+        jScrollPane1.setViewportView(txtNombrelibros);
+
+        jRadioButton1.setText("Alquilar");
+
+        jRadioButton2.setText("Comprar");
+
+        btnagregar.setText("Agregar Libro");
+        btnagregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnagregarActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Lista de Libros:");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtnombrelibro))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButton1)
+                                    .addComponent(jRadioButton2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnagregar)
+                                .addGap(37, 37, 37)))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtnombrelibro)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(1, 1, 1)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jRadioButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButton2)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnagregar)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtcomprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcomprarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcomprarActionPerformed
+
+    private void txtalquiladosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtalquiladosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtalquiladosActionPerformed
+
+    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
+       if((jRadioButton1.isSelected()==true)&&(!"".equals(txtnombrelibro.getText())==true)){
+           cantidad = cantidad + 1;
+           alquilados = alquilados + 1;
+           list.add(txtnombrelibro.getText());
+           Actualizar();
+       }
+       if((jRadioButton2.isSelected()==true)&&(!"".equals(txtnombrelibro.getText())==true)){
+           cantidad = cantidad + 1;
+           comprados = comprados + 1;
+           list.add(txtnombrelibro.getText());
+           Actualizar();
+       }
+    }//GEN-LAST:event_btnagregarActionPerformed
+
+    private void btnregresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregresarActionPerformed
+        Main_Menu mo = new Main_Menu();
+        mo.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnregresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +304,38 @@ public class Libros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnagregar;
+    private javax.swing.JButton btnregresar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblalquilar;
+    private javax.swing.JLabel lblcomprar;
+    private javax.swing.JTextArea txtNombrelibros;
+    private javax.swing.JTextField txtalquilados;
+    private javax.swing.JTextField txtcantidad;
+    private javax.swing.JTextField txtcomprar;
+    private javax.swing.JTextField txtnombrelibro;
     // End of variables declaration//GEN-END:variables
+
+    private void Actualizar() {
+        txtNombrelibros.setText("");
+        txtcantidad.setText(cantidad+"");
+        txtalquilados.setText(alquilados+"");
+        txtcomprar.setText(comprados+"");
+         jRadioButton1.setSelected(false);
+         jRadioButton2.setSelected(false);
+         txtnombrelibro.setText("");
+         Collections.sort(list);
+         for(int i =0; i<list.size();i++){
+             txtNombrelibros.setText(txtNombrelibros.getText()+list.get(i) + System.lineSeparator());
+         }
+    }
 }
