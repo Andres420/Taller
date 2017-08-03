@@ -22,11 +22,13 @@ public class Main_Menu extends javax.swing.JFrame {
         initComponents();
         Jradiobuttongroup();
     }
-    private void Jradiobuttongroup(){
+
+    private void Jradiobuttongroup() {
         ButtonGroup radiobuttons = new ButtonGroup();
         radiobuttons.add(jrbNombres);
         radiobuttons.add(jrbLibros);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -106,17 +108,19 @@ public class Main_Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btniniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btniniciarActionPerformed
-        if(jrbNombres.isSelected()== true){
+        if (jrbNombres.isSelected() == true) {
+            Nombres mon = new Nombres();
+            mon.setVisible(true);
+            dispose();
+        } else if (jrbLibros.isSelected() == true) {
             
-        }else if(jrbLibros.isSelected()== true){
-        
-        }else{
-        JOptionPane.showMessageDialog(null,"Ingrese una opcion valida");
+        } else {
+            JOptionPane.showMessageDialog(null, "Ingrese una opcion valida");
         }
     }//GEN-LAST:event_btniniciarActionPerformed
 
     private void formWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowStateChanged
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_formWindowStateChanged
 
     /**

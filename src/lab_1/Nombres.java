@@ -5,17 +5,26 @@
  */
 package lab_1;
 
+import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author estudiante
  */
 public class Nombres extends javax.swing.JFrame {
 
+    String[][] matriz = new String[3][3];
+    public int x = 0, y = 0, x_cr = 0, y_cr = 0;
+    ArrayList label = new ArrayList();
+
     /**
      * Creates new form Nombres
      */
     public Nombres() {
         initComponents();
+        
     }
 
     /**
@@ -27,21 +36,169 @@ public class Nombres extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lblnombres = new javax.swing.JLabel();
+        txtnombre = new javax.swing.JTextField();
+        btnagregar = new javax.swing.JButton();
+        lblnombre_1 = new javax.swing.JLabel();
+        lblnombre_2 = new javax.swing.JLabel();
+        lblnombre_3 = new javax.swing.JLabel();
+        lblnombre_4 = new javax.swing.JLabel();
+        lblnombre_5 = new javax.swing.JLabel();
+        lblnombre_6 = new javax.swing.JLabel();
+        lblnombre_7 = new javax.swing.JLabel();
+        lblnombre_8 = new javax.swing.JLabel();
+        lblnombre_9 = new javax.swing.JLabel();
+        btnatras = new javax.swing.JButton();
+        btncrear = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        lblnombres.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblnombres.setText("Nombre de la persona:");
+
+        btnagregar.setText("Agregar");
+        btnagregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnagregarActionPerformed(evt);
+            }
+        });
+
+        btnatras.setText("Regresar");
+        btnatras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnatrasActionPerformed(evt);
+            }
+        });
+
+        btncrear.setText("Mostrar nombres");
+        btncrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncrearActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblnombres)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                        .addComponent(btnagregar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblnombre_1)
+                            .addComponent(lblnombre_4)
+                            .addComponent(lblnombre_7))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(94, 94, 94)
+                                        .addComponent(lblnombre_2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblnombre_3))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(lblnombre_9)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(btnatras)
+                                                .addGap(39, 39, 39)
+                                                .addComponent(btncrear)
+                                                .addGap(96, 96, 96))))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(130, 130, 130)
+                                .addComponent(lblnombre_5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblnombre_6)))))
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addComponent(lblnombre_8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblnombres)
+                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnagregar))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblnombre_1)
+                    .addComponent(lblnombre_2)
+                    .addComponent(lblnombre_3))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblnombre_4)
+                    .addComponent(lblnombre_5)
+                    .addComponent(lblnombre_6))
+                .addGap(37, 37, 37)
+                .addComponent(lblnombre_8)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblnombre_7)
+                    .addComponent(lblnombre_9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnatras)
+                    .addComponent(btncrear))
+                .addContainerGap())
         );
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
+        if (!"".equals(txtnombre.getText())) {
+            //matriz[x][y] = txtnombre.getText();
+            while (x < 3) {
+
+                while (y < 3) {
+                    matriz[x][y]=txtnombre.getText();
+                    break;
+                }
+                break;
+            }
+            
+            //creando_matriz();
+            x++;
+            if(x==3 && y<2){
+            y++;
+            x=0;
+            }
+            txtnombre.setText("");
+            
+            if (x == 3 && y <=2) {
+                btnagregar.setEnabled(false);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Ingrese un nombre");
+            
+        }
+    }//GEN-LAST:event_btnagregarActionPerformed
+
+    private void btncrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncrearActionPerformed
+       creando_matriz();
+    }//GEN-LAST:event_btncrearActionPerformed
+
+    private void btnatrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnatrasActionPerformed
+        Main_Menu op = new Main_Menu();
+        op.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnatrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +236,110 @@ public class Nombres extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnagregar;
+    private javax.swing.JButton btnatras;
+    private javax.swing.JButton btncrear;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblnombre_1;
+    private javax.swing.JLabel lblnombre_2;
+    private javax.swing.JLabel lblnombre_3;
+    private javax.swing.JLabel lblnombre_4;
+    private javax.swing.JLabel lblnombre_5;
+    private javax.swing.JLabel lblnombre_6;
+    private javax.swing.JLabel lblnombre_7;
+    private javax.swing.JLabel lblnombre_8;
+    private javax.swing.JLabel lblnombre_9;
+    private javax.swing.JLabel lblnombres;
+    private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
+
+    private void creando_matriz() {
+        String nombre_1 = String.valueOf(matriz[0][0].charAt(0));
+        String nombre_2 = String.valueOf(matriz[0][1].charAt(0));
+        String nombre_3 = String.valueOf(matriz[0][2].charAt(0));
+        String nombre_4 = String.valueOf(matriz[1][0].charAt(0));
+        String nombre_5 = String.valueOf(matriz[1][1].charAt(0));
+        String nombre_6 = String.valueOf(matriz[1][2].charAt(0));
+        String nombre_7 = String.valueOf(matriz[2][0].charAt(0));
+        String nombre_8 = String.valueOf(matriz[2][1].charAt(0));
+        String nombre_9 = String.valueOf(matriz[2][2].charAt(0));
+        
+        String C = "C";
+        String c = "c";
+        String g = "g";
+        String G = "G";
+        if (nombre_1.equals(c) || nombre_1.equals(G) || nombre_1.equals(g) || nombre_1.equals(C)) {
+            lblnombre_1.setText(matriz[0][0]);
+            lblnombre_1.setOpaque(true);
+            lblnombre_1.setBackground(Color.red);
+
+        } else {
+            lblnombre_1.setText(matriz[0][0]);
+        }
+        if (nombre_2.equals(c) || nombre_2.equals(G) || nombre_2.equals(g) || nombre_2.equals(C)) {
+            lblnombre_2.setText(matriz[0][1]);
+            lblnombre_2.setOpaque(true);
+            lblnombre_2.setBackground(Color.red);
+
+        } else {
+            lblnombre_2.setText(matriz[0][1]);
+        }
+        if (nombre_3.equals(c) || nombre_3.equals(G) || nombre_3.equals(g) || nombre_3.equals(C)) {
+            lblnombre_3.setText(matriz[0][2]);
+            lblnombre_3.setOpaque(true);
+            lblnombre_3.setBackground(Color.red);
+
+        } else {
+            lblnombre_3.setText(matriz[0][2]);
+        }
+        if (nombre_4.equals(c) || nombre_4.equals(G) || nombre_4.equals(g) || nombre_4.equals(C)) {
+            lblnombre_4.setText(matriz[1][0]);
+            lblnombre_4.setOpaque(true);
+            lblnombre_4.setBackground(Color.red);
+
+        } else {
+            lblnombre_4.setText(matriz[1][0]);
+        }
+        if (nombre_5.equals(c) || nombre_5.equals(G) || nombre_5.equals(g) || nombre_5.equals(C)) {
+            lblnombre_5.setText(matriz[1][1]);
+            lblnombre_5.setOpaque(true);
+            lblnombre_5.setBackground(Color.red);
+
+        } else {
+            lblnombre_5.setText(matriz[1][1]);
+        }
+        if (nombre_6.equals(c) || nombre_6.equals(G) || nombre_6.equals(g) || nombre_6.equals(C)) {
+            lblnombre_6.setText(matriz[1][2]);
+            lblnombre_6.setOpaque(true);
+            lblnombre_6.setBackground(Color.red);
+
+        } else {
+            lblnombre_6.setText(matriz[1][2]);
+        }
+        if (nombre_7.equals(c) || nombre_7.equals(G) || nombre_7.equals(g) || nombre_7.equals(C)) {
+            lblnombre_7.setText(matriz[2][0]);
+            lblnombre_7.setOpaque(true);
+            lblnombre_7.setBackground(Color.red);
+
+        } else {
+            lblnombre_7.setText(matriz[2][0]);
+        }
+        if (nombre_8.equals(c) || nombre_8.equals(G) || nombre_8.equals(g) || nombre_8.equals(C)) {
+            lblnombre_8.setText(matriz[2][1]);
+            lblnombre_8.setOpaque(true);
+            lblnombre_8.setBackground(Color.red);
+
+        } else {
+            lblnombre_8.setText(matriz[2][1]);
+        }
+        if (nombre_9.equals(c) || nombre_9.equals(G) || nombre_9.equals(g) || nombre_9.equals(C)) {
+            lblnombre_9.setText(matriz[2][2]);
+            lblnombre_9.setOpaque(true);
+            lblnombre_9.setBackground(Color.red);
+
+        } else {
+            lblnombre_9.setText(matriz[2][2]);
+        }
+        
+    }
 }
